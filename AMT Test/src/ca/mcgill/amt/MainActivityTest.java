@@ -80,7 +80,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test 9
      * Test to see if the TextView for input C has the right text
      */
-    public void testInputCTextViewExistence(){
+    public void testInputCTextView(){
         mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
 
         //Test 5
