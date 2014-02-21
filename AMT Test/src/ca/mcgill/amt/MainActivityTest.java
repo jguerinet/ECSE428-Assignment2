@@ -1,6 +1,7 @@
 package ca.mcgill.amt;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.TextView;
 
 /**
  * Author: Julien Guerinet
@@ -8,6 +9,7 @@ import android.test.ActivityInstrumentationTestCase2;
  */
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private MainActivity activity;
+    private TextView mInputATitle;
 
     public MainActivityTest() {
         super(MainActivity.class);
@@ -18,5 +20,13 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     protected void setUp() throws Exception {
         super.setUp();
         activity = getActivity();
+    }
+
+    /**
+     * Test to see if the TextView for input A exists
+     */
+    public void testInputATextViewExistence(){
+        mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
+        assertNotNull(mInputATitle);
     }
 }
