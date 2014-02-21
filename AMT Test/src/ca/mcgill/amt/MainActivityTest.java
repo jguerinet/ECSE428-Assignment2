@@ -106,7 +106,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test 11
      * Test to see if the "Calculate" button has the right text
      */
-    public void testCalculateButtonExistence(){
+    public void testCalculateButton(){
         mCalculate = (Button)activity.findViewById(R.id.calculate);
 
         //Test 10
@@ -114,5 +114,13 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         //Test 11
         assertEquals("Calculate", mCalculate.getText().toString());
+    }
+
+    /**
+     * Test 12
+     * Test to see if TextView for result exists
+     */
+    public void testResultTextViewExistence(){
+        TextView mResultTextView = (TextView)activity.findViewById(R.id.result_title);
     }
 }
