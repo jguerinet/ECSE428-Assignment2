@@ -10,7 +10,7 @@ import android.widget.TextView;
  */
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private MainActivity activity;
-    private TextView mInputATitle, mInputBTitle;
+    private TextView mInputATitle, mInputBTitle, mInputCTitle;
     private EditText mInputA, mInputB;
 
     public MainActivityTest() {
@@ -58,5 +58,14 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testInputBEditTextExistence(){
         mInputB = (EditText)activity.findViewById(R.id.inputB);
         assertNotNull(mInputB);
+    }
+
+    /**
+     * Test 5
+     * Test to see if the TextView for Input C exists
+     */
+    public void testInputCTextViewExistence(){
+        mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
+        assertNotNull(mInputCTitle);
     }
 }
