@@ -25,6 +25,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     /**
+     * Test 1
      * Test to see if the TextView for input A exists
      */
     public void testInputATextViewExistence(){
@@ -33,10 +34,20 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     /**
+     * Test 2
      * Test to see if the EditText for input A exists
      */
     public void testInputAEditTextExistence(){
         mInputA = (EditText)activity.findViewById(R.id.inputA);
         assertNotNull(mInputA);
+    }
+
+    /**
+     * Test 3
+     * Test to see if the TextView for input B exists
+     */
+    public void testInputBTextViewExistence(){
+        mInputBTitle = (TextView)activity.findViewById(R.id.inputB_title);
+        assertNotNull(mInputBTitle);
     }
 }
