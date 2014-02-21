@@ -10,7 +10,7 @@ import android.widget.TextView;
  * Test Activity to test MainActivity in the ca.mcgill.amt packages
  */
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
-    private MainActivity activity;
+    private MainActivity mActivity;
     private EditText mInputA, mInputB, mInputC;
     private Button mCalculate;
     private TextView mResult;
@@ -23,7 +23,14 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        activity = getActivity();
+        mActivity = getActivity();
+
+        //Set up the needed TextViews, Buttons, and EditTexts
+        mInputA = (EditText) mActivity.findViewById(R.id.inputA);
+        mInputB = (EditText) mActivity.findViewById(R.id.inputB);
+        mInputC = (EditText) mActivity.findViewById(R.id.inputC);
+        mCalculate = (Button) mActivity.findViewById(R.id.calculate);
+        mResult = (TextView) mActivity.findViewById(R.id.result);
     }
 
     /**
@@ -33,7 +40,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input A has the right text
      */
     public void testInputATextView(){
-        TextView mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
+        TextView mInputATitle = (TextView) mActivity.findViewById(R.id.inputA_title);
 
         //Test 1
         assertNotNull(mInputATitle);
@@ -47,7 +54,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the EditText for input A exists
      */
     public void testInputAEditTextExistence(){
-        mInputA = (EditText)activity.findViewById(R.id.inputA);
         assertNotNull(mInputA);
     }
 
@@ -58,7 +64,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input B has the right text
      */
     public void testInputBTextView(){
-        TextView mInputBTitle = (TextView)activity.findViewById(R.id.inputB_title);
+        TextView mInputBTitle = (TextView) mActivity.findViewById(R.id.inputB_title);
 
         //Test 3
         assertNotNull(mInputBTitle);
@@ -72,7 +78,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the EditText for input B exists
      */
     public void testInputBEditTextExistence(){
-        mInputB = (EditText)activity.findViewById(R.id.inputB);
         assertNotNull(mInputB);
     }
 
@@ -83,7 +88,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input C has the right text
      */
     public void testInputCTextView(){
-        TextView mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
+        TextView mInputCTitle = (TextView) mActivity.findViewById(R.id.inputC_title);
 
         //Test 5
         assertNotNull(mInputCTitle);
@@ -97,7 +102,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the EditText for input C exists
      */
     public void testInputCEditTextExistence(){
-        mInputC = (EditText)activity.findViewById(R.id.inputC);
         assertNotNull(mInputC);
     }
 
@@ -108,8 +112,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the "Calculate" button has the right text
      */
     public void testCalculateButton(){
-        mCalculate = (Button)activity.findViewById(R.id.calculate);
-
         //Test 10
         assertNotNull(mCalculate);
 
@@ -124,7 +126,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for result has the right text
      */
     public void testResultTextView(){
-        TextView mResultTextView = (TextView)activity.findViewById(R.id.result_title);
+        TextView mResultTextView = (TextView) mActivity.findViewById(R.id.result_title);
 
         //Test 12
         assertNotNull(mResultTextView);
@@ -138,8 +140,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for the calculated result exists
      */
     public void testResultExistence(){
-        mResult = (TextView)activity.findViewById(R.id.result);
-
         assertNotNull(mResult);
     }
 }
