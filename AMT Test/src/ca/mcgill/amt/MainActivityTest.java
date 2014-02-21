@@ -27,10 +27,17 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     /**
      * Test 1
      * Test to see if the TextView for input A exists
+     * Test 7
+     * Test to see if the TextView for input A has the right text
      */
-    public void testInputATextViewExistence(){
+    public void testInputATextView(){
         mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
+
+        //Test 1
         assertNotNull(mInputATitle);
+
+        //Test 7
+        assertEquals("Side A Length:", mInputATitle.getText().toString());
     }
 
     /**
