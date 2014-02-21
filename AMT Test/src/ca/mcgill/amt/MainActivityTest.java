@@ -119,8 +119,16 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     /**
      * Test 12
      * Test to see if TextView for result exists
+     * Test 13
+     * Test to see if the TextView for result has the right text
      */
-    public void testResultTextViewExistence(){
+    public void testResultTextView(){
         TextView mResultTextView = (TextView)activity.findViewById(R.id.result_title);
+
+        //Test 12
+        assertNotNull(mResultTextView);
+
+        //Test 13
+        assertEquals("Result:", mResultTextView.getText().toString());
     }
 }
