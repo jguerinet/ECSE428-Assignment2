@@ -142,4 +142,15 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testResultExistence(){
         assertNotNull(mResult);
     }
+
+    /**
+     * Test 15
+     * Test to see the result output when no value is inputted for side A
+     */
+    public void testNoAValue(){
+        //Click on the Calculate button
+        mCalculate.performClick();
+
+        assertEquals("Error: Please input a value for side A", mResult.getText().toString());
+    }
 }
