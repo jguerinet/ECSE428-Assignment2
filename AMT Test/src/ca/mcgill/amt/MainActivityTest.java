@@ -1,6 +1,7 @@
 package ca.mcgill.amt;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -10,8 +11,8 @@ import android.widget.TextView;
  */
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private MainActivity activity;
-    private TextView mInputATitle, mInputBTitle, mInputCTitle;
     private EditText mInputA, mInputB, mInputC;
+    private Button mCalculate;
 
     public MainActivityTest() {
         super(MainActivity.class);
@@ -31,7 +32,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input A has the right text
      */
     public void testInputATextView(){
-        mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
+        TextView mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
 
         //Test 1
         assertNotNull(mInputATitle);
@@ -56,7 +57,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input B has the right text
      */
     public void testInputBTextView(){
-        mInputBTitle = (TextView)activity.findViewById(R.id.inputB_title);
+        TextView mInputBTitle = (TextView)activity.findViewById(R.id.inputB_title);
 
         //Test 3
         assertNotNull(mInputBTitle);
@@ -81,7 +82,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test to see if the TextView for input C has the right text
      */
     public void testInputCTextView(){
-        mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
+        TextView mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
 
         //Test 5
         assertNotNull(mInputCTitle);
@@ -97,5 +98,13 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testInputCEditTextExistence(){
         mInputC = (EditText)activity.findViewById(R.id.inputC);
         assertNotNull(mInputC);
+    }
+
+    /**
+     * Test 10
+     * Test to see if the "Calculate" Button
+     */
+    public void testCalculateButtonExistence(){
+        mCalculate = (Button)activity.findViewById(R.id.calculate);
     }
 }
