@@ -13,6 +13,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     private MainActivity activity;
     private EditText mInputA, mInputB, mInputC;
     private Button mCalculate;
+    private TextView mResult;
 
     public MainActivityTest() {
         super(MainActivity.class);
@@ -130,5 +131,15 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         //Test 13
         assertEquals("Result:", mResultTextView.getText().toString());
+    }
+
+    /**
+     * Test 14
+     * Test to see if the TextView for the calculated result exists
+     */
+    public void testResultExistence(){
+        mResult = (TextView)activity.findViewById(R.id.result);
+
+        assertNotNull(mResult);
     }
 }
