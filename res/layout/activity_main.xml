@@ -43,5 +43,9 @@
             android:id="@+id/result_title"
             android:text="Result:"/>
 
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/result"/>
+
 </LinearLayout>
 
