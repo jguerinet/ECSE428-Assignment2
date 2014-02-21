@@ -53,7 +53,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test 3
      * Test to see if the TextView for input B exists
      * Test 8
-     * Test to see if the TextView for input A has the right text
+     * Test to see if the TextView for input B has the right text
      */
     public void testInputBTextView(){
         mInputBTitle = (TextView)activity.findViewById(R.id.inputB_title);
@@ -77,10 +77,17 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     /**
      * Test 5
      * Test to see if the TextView for Input C exists
+     * Test 9
+     * Test to see if the TextView for input C has the right text
      */
     public void testInputCTextViewExistence(){
         mInputCTitle = (TextView)activity.findViewById(R.id.inputC_title);
+
+        //Test 5
         assertNotNull(mInputCTitle);
+
+        //Test 9
+        assertEquals("Side C Length:", mInputCTitle.getText().toString());
     }
 
     /**
