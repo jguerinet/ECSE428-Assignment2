@@ -1,6 +1,7 @@
 package ca.mcgill.amt;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -10,6 +11,7 @@ import android.widget.TextView;
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private MainActivity activity;
     private TextView mInputATitle;
+    private EditText mInputA;
 
     public MainActivityTest() {
         super(MainActivity.class);
@@ -28,5 +30,12 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testInputATextViewExistence(){
         mInputATitle = (TextView)activity.findViewById(R.id.inputA_title);
         assertNotNull(mInputATitle);
+    }
+
+    /**
+     * Test to see if the EditText for input A exists
+     */
+    public void testInputAEditTextExistence(){
+        mInputA = (EditText)activity.findViewById(R.id.inputA);
     }
 }
