@@ -48,12 +48,18 @@ public class MainActivity extends Activity {
                 return;
             }
 
+            //Too small
             if(a < 1 || b < 1 || c < 1){
                 mResult.setText("Error: Numbers need to be 1 or larger");
                 return;
             }
+            //Too big
+            else if(a > 100 || b > 100 || c > 100){
+                mResult.setText("Error: Numbers need to be 100 or smaller");
+                return;
+            }
 
-            mResult.setText("Error: Numbers need to be 100 or smaller");
+            mResult.setText("Error: Numbers inputted do not form a triangle");
         }
     }
 }
