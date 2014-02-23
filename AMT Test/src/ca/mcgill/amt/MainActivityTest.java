@@ -213,4 +213,35 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Please input numbers only", mResult.getText().toString());
     }
+
+    /**
+     * Test 19
+     * Test to see the result output when 0 or a negative number is inputted
+     */
+    @UiThreadTest
+    public void testLowerBound(){
+        //Set A to a negative number
+        mInputA.setText("-3");
+        mInputB.setText("2");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 1 or larger", mResult.getText().toString());
+
+        //Set B to 0
+        mInputA.setText("2");
+        mInputB.setText("0");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 1 or larger", mResult.getText().toString());
+
+        //Set C to negative number
+        mInputA.setText("2");
+        mInputB.setText("2");
+        mInputC.setText("-134");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 1 or larger", mResult.getText().toString());
+    }
 }
