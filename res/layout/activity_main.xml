@@ -36,7 +36,8 @@
         <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/calculate"
-            android:text="Calculate"/>
+            android:text="Calculate"
+            android:onClick="calculate"/>
 
         <TextView android:layout_width="match_parent"
             android:layout_height="wrap_content"
