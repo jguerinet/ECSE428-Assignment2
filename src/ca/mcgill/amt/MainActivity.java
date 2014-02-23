@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private EditText mInputA, mInputB;
+    private EditText mInputA, mInputB, mInputC;
     private TextView mResult;
 
     @Override
@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
 
         mInputA = (EditText)findViewById(R.id.inputA);
         mInputB = (EditText)findViewById(R.id.inputB);
+        mInputC = (EditText)findViewById(R.id.inputC);
         mResult = (TextView)findViewById(R.id.result);
     }
 
@@ -28,9 +29,11 @@ public class MainActivity extends Activity {
         else if(TextUtils.isEmpty(mInputB.getText().toString().trim())){
             mResult.setText("Error: Please input a value for side B");
         }
-        else{
+        else if(TextUtils.isEmpty(mInputC.getText().toString())){
             mResult.setText("Error: Please input a value for side C");
         }
-
+        else{
+            mResult.setText("Error: Please input numbers only");
+        }
     }
 }
