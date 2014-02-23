@@ -306,4 +306,19 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Numbers inputted do not form a triangle", mResult.getText().toString());
     }
+
+    /**
+     * Test 22
+     * Test to see the output for a scalene triangle input
+     */
+    @UiThreadTest
+    public void testScaleneTriangle(){
+        //Set A, B, and C to be different numbers
+        mInputA.setText("2");
+        mInputB.setText("3");
+        mInputC.setText("4");
+        mCalculate.performClick();
+
+        assertEquals("Scalene Triangle", mResult.getText().toString());
+    }
 }
