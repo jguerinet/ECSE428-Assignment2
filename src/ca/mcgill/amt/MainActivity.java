@@ -58,8 +58,13 @@ public class MainActivity extends Activity {
                 mResult.setText("Error: Numbers need to be 100 or smaller");
                 return;
             }
+            //Not a triangle
+            else if(a + b < c || b + c < a || a + c < b){
+                mResult.setText("Error: Numbers inputted do not form a triangle");
+                return;
+            }
 
-            mResult.setText("Error: Numbers inputted do not form a triangle");
+            mResult.setText("Scalene Triangle");
         }
     }
 }
