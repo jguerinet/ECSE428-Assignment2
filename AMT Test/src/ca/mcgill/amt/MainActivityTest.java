@@ -166,6 +166,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         mInputA.setText("2");
         mCalculate.performClick();
 
-        assertEquals("Error: please input a value for side B", mResult.getText().toString());
+        assertEquals("Error: Please input a value for side B", mResult.getText().toString());
     }
 }

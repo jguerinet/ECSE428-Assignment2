@@ -2,6 +2,7 @@ package ca.mcgill.amt;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +21,12 @@ public class MainActivity extends Activity {
     }
 
     public void calculate(View v){
-        mResult.setText("Error: Please input a value for side A");
+        if(TextUtils.isEmpty(mInputA.getText().toString().trim())){
+            mResult.setText("Error: Please input a value for side A");
+        }
+        else{
+            mResult.setText("Error: Please input a value for side B");
+        }
+
     }
 }
