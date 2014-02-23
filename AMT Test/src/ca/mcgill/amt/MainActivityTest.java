@@ -182,4 +182,35 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Please input a value for side C", mResult.getText().toString());
     }
+
+    /**
+     * Test 18
+     * Test to see the result output when one of the values is not a number.
+     */
+    @UiThreadTest
+    public void testInvalidInputType(){
+        //Set an invalid input type for A
+        mInputA.setText("Invalid");
+        mInputB.setText("2");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+
+        //Set an invalid input type for B
+        mInputA.setText("2");
+        mInputB.setText("D");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+
+        //Set an invalid input type for C
+        mInputA.setText("2");
+        mInputB.setText("2");
+        mInputC.setText(".");
+        mCalculate.performClick();
+
+        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+    }
 }
