@@ -321,4 +321,19 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Scalene Triangle", mResult.getText().toString());
     }
+
+    /**
+     * Test 23
+     * Test to see the output for an equilateral triangle
+     */
+    @UiThreadTest
+    public void testEquilateralTriangle(){
+        //Set A, B, and C to the same number
+        mInputA.setText("2");
+        mInputB.setText("2");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Equilateral Triangle", mResult.getText().toString());
+    }
 }
