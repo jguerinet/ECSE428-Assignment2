@@ -68,6 +68,11 @@ public class MainActivity extends Activity {
                 mResult.setText("Equilateral Triangle");
                 return;
             }
+            //Isosceles Triangle
+            else if(a == b || a == c || b == c){
+                mResult.setText("Isosceles Triangle");
+                return;
+            }
 
             mResult.setText("Scalene Triangle");
         }
