@@ -23,17 +23,36 @@ public class MainActivity extends Activity {
     }
 
     public void calculate(View v){
-        if(TextUtils.isEmpty(mInputA.getText().toString().trim())){
+        String inputA = mInputA.getText().toString().trim();
+        String inputB = mInputB.getText().toString().trim();
+        String inputC = mInputC.getText().toString().trim();
+
+        if(TextUtils.isEmpty(inputA)){
             mResult.setText("Error: Please input a value for side A");
         }
-        else if(TextUtils.isEmpty(mInputB.getText().toString().trim())){
+        else if(TextUtils.isEmpty(inputB)){
             mResult.setText("Error: Please input a value for side B");
         }
-        else if(TextUtils.isEmpty(mInputC.getText().toString())){
+        else if(TextUtils.isEmpty(inputC)){
             mResult.setText("Error: Please input a value for side C");
         }
         else{
-            mResult.setText("Error: Please input numbers only");
+            //Parse the numbers
+            int a, b, c;
+            try{
+                a = Integer.parseInt(inputA);
+                b = Integer.parseInt(inputB);
+                c = Integer.parseInt(inputC);
+            } catch (NumberFormatException e){
+                mResult.setText("Error: Please input numbers only");
+                return;
+            }
+
+            mResult.setText("Error: Numbers need to be 1 or larger");
+//            if(a < 1 || b < 1 || c < 1){
+
+//                return;
+//            }
         }
     }
 }
