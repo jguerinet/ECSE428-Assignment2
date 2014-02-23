@@ -336,4 +336,35 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Equilateral Triangle", mResult.getText().toString());
     }
+
+    /**
+     * Test 24
+     * Test to see the output for a isosceles triangle
+     */
+    @UiThreadTest
+    public void testIsoscelesTriangle(){
+        //Set A and B to the same number
+        mInputA.setText("2");
+        mInputB.setText("2");
+        mInputC.setText("3");
+        mCalculate.performClick();
+
+        assertEquals("Isosceles Triangle", mResult.getText().toString());
+
+        //Set C and B to the same number
+        mInputA.setText("5");
+        mInputB.setText("6");
+        mInputC.setText("6");
+        mCalculate.performClick();
+
+        assertEquals("Isosceles Triangle", mResult.getText().toString());
+
+        //Set A and B to the same number
+        mInputA.setText("7");
+        mInputB.setText("10");
+        mInputC.setText("7");
+        mCalculate.performClick();
+
+        assertEquals("Isosceles Triangle", mResult.getText().toString());
+    }
 }
