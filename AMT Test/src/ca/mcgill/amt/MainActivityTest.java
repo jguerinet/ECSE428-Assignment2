@@ -155,4 +155,17 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Please input a value for side A", mResult.getText().toString());
     }
+
+    /**
+     * Test 16
+     * Test to see the result output when no value is inputted for side B
+     */
+    @UiThreadTest
+    public void testNoBValue(){
+        //Set a value for A
+        mInputA.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: please input a value for side B", mResult.getText().toString());
+    }
 }
