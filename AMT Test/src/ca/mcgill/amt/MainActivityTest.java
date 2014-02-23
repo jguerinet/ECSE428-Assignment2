@@ -275,4 +275,35 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Numbers need to be 100 or smaller", mResult.getText().toString());
     }
+
+    /**
+     * Test 21
+     * Test to see the ouput when the numbers given does not form a triangle
+     */
+    @UiThreadTest
+    public void testTriangleExistence(){
+        //Set A to be more than the sum of the other 2 sides
+        mInputA.setText("100");
+        mInputB.setText("2");
+        mInputC.setText("5");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers inputted do not form a triangle", mResult.getText().toString());
+
+        //Set B to be more than the sum of the other 2 sides
+        mInputA.setText("50");
+        mInputB.setText("56");
+        mInputC.setText("5");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers inputted do not form a triangle", mResult.getText().toString());
+
+        //Set A to be more than the sum of the other 2 sides
+        mInputA.setText("1");
+        mInputB.setText("1");
+        mInputC.setText("3");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers inputted do not form a triangle", mResult.getText().toString());
+    }
 }
