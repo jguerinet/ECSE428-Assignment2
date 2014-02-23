@@ -195,7 +195,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         mInputC.setText("2");
         mCalculate.performClick();
 
-        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+        assertEquals("Error: Please input whole numbers only", mResult.getText().toString());
 
         //Set an invalid input type for B
         mInputA.setText("2");
@@ -203,7 +203,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         mInputC.setText("2");
         mCalculate.performClick();
 
-        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+        assertEquals("Error: Please input whole numbers only", mResult.getText().toString());
 
         //Set an invalid input type for C
         mInputA.setText("2");
@@ -211,7 +211,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         mInputC.setText(".");
         mCalculate.performClick();
 
-        assertEquals("Error: Please input numbers only", mResult.getText().toString());
+        assertEquals("Error: Please input whole numbers only", mResult.getText().toString());
     }
 
     /**

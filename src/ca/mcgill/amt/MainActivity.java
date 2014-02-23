@@ -44,15 +44,16 @@ public class MainActivity extends Activity {
                 b = Integer.parseInt(inputB);
                 c = Integer.parseInt(inputC);
             } catch (NumberFormatException e){
-                mResult.setText("Error: Please input numbers only");
+                mResult.setText("Error: Please input whole numbers only");
                 return;
             }
 
-            mResult.setText("Error: Numbers need to be 1 or larger");
-//            if(a < 1 || b < 1 || c < 1){
+            if(a < 1 || b < 1 || c < 1){
+                mResult.setText("Error: Numbers need to be 1 or larger");
+                return;
+            }
 
-//                return;
-//            }
+            mResult.setText("Error: Numbers need to be 100 or smaller");
         }
     }
 }
