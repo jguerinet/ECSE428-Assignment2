@@ -244,4 +244,35 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertEquals("Error: Numbers need to be 1 or larger", mResult.getText().toString());
     }
+
+    /**
+     * Test 20
+     * Test to see the result output when numbers bigger than 100 are inputted
+     */
+    @UiThreadTest
+    public void testUpperBound(){
+        //Set A to a number bigger than 100
+        mInputA.setText("101");
+        mInputB.setText("2");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 100 or smaller", mResult.getText().toString());
+
+        //Set B to a number bigger than 100
+        mInputA.setText("2");
+        mInputB.setText("10000");
+        mInputC.setText("2");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 100 or smaller", mResult.getText().toString());
+
+        //Set C to a number bigger than 100
+        mInputA.setText("2");
+        mInputB.setText("2");
+        mInputC.setText("134");
+        mCalculate.performClick();
+
+        assertEquals("Error: Numbers need to be 100 or smaller", mResult.getText().toString());
+    }
 }
