@@ -63,6 +63,11 @@ public class MainActivity extends Activity {
                 mResult.setText("Error: Numbers inputted do not form a triangle");
                 return;
             }
+            //Equilateral triangle
+            else if(a == b && a == c){
+                mResult.setText("Equilateral Triangle");
+                return;
+            }
 
             mResult.setText("Scalene Triangle");
         }
