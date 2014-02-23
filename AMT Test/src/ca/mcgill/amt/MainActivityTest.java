@@ -1,6 +1,7 @@
 package ca.mcgill.amt;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -147,6 +148,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test 15
      * Test to see the result output when no value is inputted for side A
      */
+    @UiThreadTest
     public void testNoAValue(){
         //Click on the Calculate button
         mCalculate.performClick();
